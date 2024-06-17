@@ -1,0 +1,172 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --color1: rgb(38, 27, 87);
+    --white: rgb(255,255,255);
+    --color2: rgb(219, 51, 51);
+    --color3: rgb(29, 192, 29);
+}
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: white;
+    background-color: var(--color1);
+    border: 1px solid var(--color2);
+    max-width: 70%;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    height: 80vh;
+    box-shadow: 10px 10px 20px black;
+    margin-top: 20px;
+}
+.header-text{
+    text-align: center;
+}
+
+/*form*/
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    gap: 20px;
+    color: white;
+}
+
+#username, #password{
+    position: relative;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid var(--color2);
+    width: 200px;
+    height: 20px;
+    padding: 15px;
+    outline: none;
+    color: white;
+}
+#username{
+    transition: width 1s ease-in;
+    background-image: url('user-solid.svg');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 10px;
+    padding-left: 30px;
+}
+#password{
+    transition: width 1s ease-in;
+    background-image: url('lock-solid.svg');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    background-size: 10px;
+    padding-left: 30px;
+}
+#username::placeholder, #password::placeholder{
+    color: var(--white);
+    opacity: 0.5;
+    padding: 0 10px;
+}
+#username:focus, #password:focus{
+    color: var(--color2);
+    width: 250px;
+}
+.remember{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.forgot-password, .account a{
+    color: var(--color2);
+    text-decoration: none;
+    transition: color 0.5s ease-in-out;
+}
+.forgot-password:hover, .account a:hover{
+    color: green;
+}
+.btn{
+    border: 1px solid var(--white);
+    cursor: pointer;
+    background-color: var(--color2);
+    width: 200px;
+    color: var(--white);
+    padding: 5px;
+    border-radius: 20px;
+    transition: all 0.3s linear;
+}
+.btn:hover{
+    background-color: var(--color3);
+    box-shadow: 1px 1px 15px var(--color3);
+    border: 1px solid var(--color2);
+    color: var(--color2);
+}
+.btn:active{
+    transform: translate(0px,3px);
+    
+}
+
+/*footer*/
+.footer{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+.account{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+.link a i{
+    color: red;
+    margin: 0 10px;
+    transition: color 0.5 linear;
+}
+.link a i:hover{
+    color: var(--color3);
+}
+.link{
+    margin-bottom: 30px;
+}
+@keyframes jump {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.jump{
+    animation: jump 1s ease-in-out 1;
+}
+
+@media screen and (max-width: 800px){
+    body{
+        width:60%;
+        height: 50%;
+        margin:auto;
+        margin-top: 20%;
+    }
+}
+@media screen and (max-width: 450px){
+    body{
+        width: 80%;
+        height: 80%;
+    }
+    .remember, .account{
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+@media screen and (max-width: 650px){
+   .remember, .account{
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+}
